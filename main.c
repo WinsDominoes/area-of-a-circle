@@ -9,7 +9,6 @@ struct Circle {
 	double area; 
 };
 
-
 void _change_value(struct Circle *p, int choice, double r, double d) {
 	double area; 
 
@@ -28,16 +27,16 @@ void _change_value(struct Circle *p, int choice, double r, double d) {
 }
 
 int main() {
-
 	char choice;
 	double d, r;
 	
-	printf("Diameter or Radius? [d/r]: \n");
+	printf("Diameter or Radius? [d/r]: ");
 	scanf("%s", &choice);
 
 	struct Circle Circle1;
 
 	if(choice == 'd') {
+		printf("Enter Diameter: ");
 		scanf("%lf", &d);
 		
 		_change_value(&Circle1, 0, 0, d);
@@ -45,6 +44,7 @@ int main() {
 		printf("Diameter: %lf\n", Circle1.diameter);
 		printf("Area: %lf\n", Circle1.area);
 	} else if (choice == 'r') {
+		printf("Enter Radius: ");
 		scanf("%lf", &r);
 		
 		_change_value(&Circle1, 1, r, 0);
@@ -54,5 +54,4 @@ int main() {
 	} else {
 		printf("Incorrect Option");
 	}
-
 }
